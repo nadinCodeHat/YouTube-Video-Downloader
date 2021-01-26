@@ -63,6 +63,26 @@ namespace YouTube_Video_Downloader_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap go_20px {
+            get {
+                object obj = ResourceManager.GetObject("go_20px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap go_50px {
+            get {
+                object obj = ResourceManager.GetObject("go_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap youtube_logo {
             get {
                 object obj = ResourceManager.GetObject("youtube_logo", resourceCulture);
