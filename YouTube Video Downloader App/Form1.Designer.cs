@@ -31,8 +31,8 @@ namespace YouTube_Video_Downloader_App
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
-            this.url = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.uriTextBox = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -47,7 +47,6 @@ namespace YouTube_Video_Downloader_App
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -58,7 +57,6 @@ namespace YouTube_Video_Downloader_App
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -69,7 +67,6 @@ namespace YouTube_Video_Downloader_App
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.progressBar3 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -87,11 +84,8 @@ namespace YouTube_Video_Downloader_App
             this.getBtn = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.downloadsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,26 +102,28 @@ namespace YouTube_Video_Downloader_App
             this.label1.TabIndex = 1;
             this.label1.Text = "Downloader v1.0";
             // 
-            // url
+            // uriTextBox
             // 
-            this.url.Location = new System.Drawing.Point(32, 79);
-            this.url.Name = "url";
-            this.url.Size = new System.Drawing.Size(552, 20);
-            this.url.TabIndex = 3;
-            this.url.Text = "URL";
+            this.uriTextBox.Location = new System.Drawing.Point(32, 79);
+            this.uriTextBox.Name = "uriTextBox";
+            this.uriTextBox.Size = new System.Drawing.Size(552, 20);
+            this.uriTextBox.TabIndex = 3;
+            this.uriTextBox.Text = "URI";
             // 
-            // textBox2
+            // titleTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(32, 116);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(552, 20);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Title";
+            this.titleTextBox.Location = new System.Drawing.Point(32, 116);
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.ReadOnly = true;
+            this.titleTextBox.Size = new System.Drawing.Size(552, 20);
+            this.titleTextBox.TabIndex = 5;
+            this.titleTextBox.Text = "Title";
             // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(32, 153);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(552, 20);
             this.textBox3.TabIndex = 7;
             this.textBox3.Text = "Save As";
@@ -176,7 +172,6 @@ namespace YouTube_Video_Downloader_App
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.progressBar1);
-            this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(610, 95);
@@ -262,15 +257,6 @@ namespace YouTube_Video_Downloader_App
             this.progressBar1.Size = new System.Drawing.Size(489, 15);
             this.progressBar1.TabIndex = 1;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(90, 95);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -283,7 +269,6 @@ namespace YouTube_Video_Downloader_App
             this.panel2.Controls.Add(this.label19);
             this.panel2.Controls.Add(this.label20);
             this.panel2.Controls.Add(this.progressBar2);
-            this.panel2.Controls.Add(this.pictureBox3);
             this.panel2.Location = new System.Drawing.Point(3, 104);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(610, 95);
@@ -369,15 +354,6 @@ namespace YouTube_Video_Downloader_App
             this.progressBar2.Size = new System.Drawing.Size(489, 15);
             this.progressBar2.TabIndex = 1;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(90, 95);
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
@@ -390,7 +366,6 @@ namespace YouTube_Video_Downloader_App
             this.panel3.Controls.Add(this.label26);
             this.panel3.Controls.Add(this.label27);
             this.panel3.Controls.Add(this.progressBar3);
-            this.panel3.Controls.Add(this.pictureBox4);
             this.panel3.Location = new System.Drawing.Point(3, 205);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(610, 95);
@@ -475,15 +450,6 @@ namespace YouTube_Video_Downloader_App
             this.progressBar3.Name = "progressBar3";
             this.progressBar3.Size = new System.Drawing.Size(489, 15);
             this.progressBar3.TabIndex = 1;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(90, 95);
-            this.pictureBox4.TabIndex = 0;
-            this.pictureBox4.TabStop = false;
             // 
             // label2
             // 
@@ -657,8 +623,8 @@ namespace YouTube_Video_Downloader_App
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.guna2ImageButton1);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.url);
+            this.Controls.Add(this.titleTextBox);
+            this.Controls.Add(this.uriTextBox);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
@@ -667,13 +633,10 @@ namespace YouTube_Video_Downloader_App
             this.flowLayoutPanel1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.downloadsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -686,8 +649,8 @@ namespace YouTube_Video_Downloader_App
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox url;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox uriTextBox;
+        private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.TextBox textBox3;
         private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -700,7 +663,6 @@ namespace YouTube_Video_Downloader_App
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
@@ -727,7 +689,6 @@ namespace YouTube_Video_Downloader_App
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.ProgressBar progressBar2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
@@ -738,7 +699,6 @@ namespace YouTube_Video_Downloader_App
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.ProgressBar progressBar3;
-        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

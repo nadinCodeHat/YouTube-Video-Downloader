@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using YoutubeExtractor;
+using VideoLibrary;
 
 namespace YouTube_Video_Downloader_App
 {
@@ -19,39 +19,20 @@ namespace YouTube_Video_Downloader_App
             InitializeComponent();
         }
 
-        IEnumerable<VideoInfo> videoInfos;
-
         private void getBtn_Click(object sender, EventArgs e)
         {
-            string link = url.Text;
-            videoInfos = DownloadUrlResolver.GetDownloadUrls(link);
-
-
-            VideoInfo video = videoInfos
-                .First(info => info.VideoType == VideoType.Mp4 && info.Resolution == 360);
-
-            /*
-             * If the video has a decrypted signature, decipher it
-             */
-            if (video.RequiresDecryption)
-            {
-                DownloadUrlResolver.DecryptDownloadUrl(video);
-            }
-
-            /*
-             * Create the video downloader.
-             * The first argument is the video to download.
-             * The second argument is the path to save the video file.
-             */
-            var videoDownloader = new VideoDownloader(video, Path.Combine("C:\\", video.Title + video.VideoExtension));
-            videoDownloader.DownloadFinished += videodownload_DownloadFinised;
- 
-            videoDownloader.Execute();
-        }
-
-        void videodownload_DownloadFinised(object s, EventArgs e)
-        {
-            MessageBox.Show("Download has been finised");
+            string uri = uriTextBox.Text.ToString();
+            var youTube = YouTube.Default;
+            var video = youTube.GetVideo(uri);
+            
+            string title = video.Title; //Get title
+            titleTextBox.Text = "";
+            titleTextBox.Text = title;
+            
+            VideoInfo info = video.Info; //(Title, Author, LengthSeconds)
+            string fileExtension = video.FileExtension;
+            string fullName = video.FullName; // same thing as title + fileExtension
+            int resolution = video.Resolution;
         }
     }
 }
