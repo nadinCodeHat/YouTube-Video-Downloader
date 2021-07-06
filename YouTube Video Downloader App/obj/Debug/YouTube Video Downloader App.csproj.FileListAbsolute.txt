@@ -17,7 +17,6 @@ C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\bin\Debug\Newto
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\bin\Debug\Newtonsoft.Json.xml
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTube Video Downloader App.csprojAssemblyReference.cache
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTube_Video_Downloader_App.About.resources
-C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTube_Video_Downloader_App.Form1.resources
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTube_Video_Downloader_App.Properties.Resources.resources
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTube Video Downloader App.csproj.GenerateResource.cache
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTube Video Downloader App.csproj.CoreCompileInputs.cache
@@ -27,3 +26,4 @@ C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTu
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\bin\Debug\libvideo.dll
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\bin\Debug\System.Diagnostics.DiagnosticSource.dll
 C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\bin\Debug\System.Diagnostics.DiagnosticSource.xml
+C:\git\YouTube-Video-Downloader-App\YouTube Video Downloader App\obj\Debug\YouTube_Video_Downloader_App.App.resources
