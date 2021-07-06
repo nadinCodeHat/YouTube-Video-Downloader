@@ -19,27 +19,47 @@ namespace YouTube_Video_Downloader_App
             InitializeComponent();
         }
 
-        private void getBtn_Click(object sender, EventArgs e)
-        {
-            getYTMetadata(urlTextBox.Text.ToString());
-            MessageBox.Show(title + "" + fullname + "format" + resolution);
-            var youTube = YouTube.Default;
-            var video = youTube.GetVideo();
-
-            string title = video.Title; //Get title
-            titleTextBox.Text = "";
-            titleTextBox.Text = title;
-
-            VideoInfo info = video.Info; //(Title, Author, LengthSeconds)
-            string fileExtension = video.FileExtension;
-            string fullName = video.FullName; // same thing as title + fileExtension
-            int resolution = video.Resolution;
-        }
-
         private void aboutBtn_Click(object sender, EventArgs e)
         {
             About abtFrm = new About();
             abtFrm.ShowDialog();
+        }
+
+        private void pasteBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void urlTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(urlTextBox.Text))
+            {
+                // Do Nothing
+            }
+            else
+            {
+                var youTube = YouTube.Default;
+                try
+                {
+                    var video = youTube.GetVideo(urlTextBox.Text.ToString());
+                    string title = video.Title; //Get title
+                    ytitle.Text = "";
+                    ytitle.Text = title;
+
+                    VideoInfo info = video.Info; //(Title, Author, LengthSeconds)
+                    string fileExtension = video.FileExtension;
+                    string fullName = video.FullName; // same thing as title + fileExtension
+                    int resolution = video.Resolution;
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Invalid URI");
+                }
+            }
+        }
+
+        private void downloadBtn_Click(object sender, EventArgs e)
+        {
         }
     }
 }
